@@ -1,0 +1,90 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.content {
+  place-self: start center;
+}
+
+figure {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  flex-grow: 1;
+}
+
+figure img {
+  width: 100%;
+}
+
+p {
+  width: 20ch;
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  img {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    font-family: "Sohne", sans-serif;
+    font-variation-settings: "wght" 250;
+  }
+
+  h1,
+  h2,
+  h3,
+  a {
+    font-family: "Inter", sans-serif;
+    font-variation-settings: "wght" 700;
+  }
+}
+
+@layer demo {
+  .card {
+    font-family: system-ui;
+    font-size: 1.2rem;
+    background: #eed1cd;
+    padding: 2rem;
+    max-inline-size: 800px;
+    margin: 2rem auto;
+
+    resize: horizontal;
+    overflow: hidden;
+  }
+
+  .content > * + * {
+    margin-top: var(--space, 0.5rem);
+  }
+
+  h2 {
+    line-height: 1.125;
+  }
+
+  a {
+    --space: 1.5rem;
+    background: #42031f;
+    color: #fff;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    line-height: 1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+}
